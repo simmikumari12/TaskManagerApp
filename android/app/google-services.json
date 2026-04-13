@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "815522571989",
+    "project_id": "task-manager-simmi-mad",
+    "storage_bucket": "task-manager-simmi-mad.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815522571989:android:4eb8897836963eeb76a45c",
+        "android_client_info": {
+          "package_name": "com.example.task_manager"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_onOJP4TVu0bmZ_OoFUkyLNkqUs-uRRk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
