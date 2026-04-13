@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class Task {
   final String id;
   final String title;
@@ -13,7 +15,6 @@ class Task {
     required this.createdAt,
   });
 
-  // Serialize → Firestore
   Map<String, dynamic> toMap() => {
     'title': title,
     'isCompleted': isCompleted,
@@ -21,7 +22,6 @@ class Task {
     'createdAt': createdAt.toIso8601String(),
   };
 
-  // Deserialize ← Firestore snapshot
   factory Task.fromMap(String id, Map<String, dynamic> data) => Task(
     id: id,
     title: data['title'] ?? '',
@@ -29,14 +29,4 @@ class Task {
     subtasks: List<Map<String, dynamic>>.from(data['subtasks'] ?? []),
     createdAt: DateTime.tryParse(data['createdAt'] ?? '') ?? DateTime.now(),
   );
-
-  // Helper for toggling completion
-  Task copyWith({String? title, bool? isCompleted, List<Map<String, dynamic>>? subtasks}) =>
-    Task(
-      id: id,
-      title: title ?? this.title,
-      isCompleted: isCompleted ?? this.isCompleted,
-      subtasks: subtasks ?? this.subtasks,
-      createdAt: createdAt,
-    );
 }
